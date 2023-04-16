@@ -4,55 +4,84 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" 
+            integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" 
+            crossorigin="anonymous">
     <link rel="stylesheet" href="styles/style.css">
     <title>Study_Helper</title>
 </head>
 <body>
-    <wrapper>
+    <div class="wrapper">
         <header>
-            <h1>Study_Helper - лучший помошник в учёбе!</h1>
+            <div class="title">
+                <h1>Study_Helper</h1>
+                <h2>Делу время, потехе час.</h2>
+            </div>
             <nav>
                 <ul class="menu">
                     <ol class="about">
-                        <p class="about_menu-text">О сайте</p>
+                        <a href='about_us.html' class="about_menu-text">О сайте</a>
                     </ol>
-                    <ol class="docx">
-                        <p class="docx_text">Работа с .docx</p>
+                    <ol class="doc">
+                        <a href='doc.html' class="doc_text">Работа с .doc</a>
                     </ol>
                     <ol class="transform">
-                        <p class="transform_text">Перевод в текст</p>
+                        <a href='into_text.html' class="transform_text">Перевод в текст</a>
                     </ol>
                     <ol class="timetable">
-                        <p class="timetable_text">Расписание</p>
+                        <a href='timetable.html' class="timetable_text">Расписание</a>
+                    </ol>
+                    <ol>
+                        <a href="recom.html" class="recom_text">Советы</a>
                     </ol>
                     <ol class="sites">
-                        <p class="sites_text">Сайты</p>
-                    </ol>
-                    <ol class="portfolio">
-                        <p class="portfolio_text">Портфолио</p>
+                        <a href='#' class="sites_text">Сайты</a>
+                        <ul>
+                            <ol>
+                                <a href="https://vpr.sdamgia.ru/">Решу ВПР</a>
+                            </ol>
+                            <ol>
+                                <a href="https://oge.sdamgia.ru/">Решу ОГЭ</a>
+                            </ol>
+                            <ol>
+                                <a href="https://ege.sdamgia.ru/">Решу ЕГЭ</a>
+                            </ol>
+                            <ol>
+                                <a href="https://obrazovaka.ru/books">Краткое содержание</a>
+                            </ol>
+                            <ol>
+                                <a href="https://biouroki.ru/workshop/crossgen.html">Кроссворд</a>
+                            </ol>
+                        </ul>
                     </ol>
                     <ol class="settings">
-                        <p class="settings_text">Настройки</p>
+                        <a href='#' class="settings_text">Настройки</a>
                     </ol>
                 </ul>
             </nav>
         </header>
         <content>
-            <div class="content_settings"></div>
+            <div class="content_settings">
+            </div>
         </content>
         <footer>
+            <div class="telephone">
+                <p>Телефон</p>
+                <a href="tel:">+7-923-666-23-45</a>
+            </div>
             <div class="contacts">
                 <p class="contacts_text">Контакты</p>
-                <a href="" class="logo1"><img src="" alt="логотип WhatsApp"></a>
-                <a href="" class="logo2"><img src="" alt="логотип ВК"></a>
-                <a href="" class="logo3"><img src="" alt="логотип Viber"></a>
-                <a href="" class="logo4"><img src="" alt="логотип Telegram"></a>
-                <a href="" class="logo5"><img src="" alt="логотип Discord"></a>
+                <a href="https://web.whatsapp.com/" class="logo1"><img src="img/whatsap-icon.png" alt="рисунок WhatsApp"></a>
+                <a href="https://vk.com" class="logo2"><img src="img/vk-icon.png" alt="рисунок VK"></a>
+                <a href="https://www.viber.com/" class="logo3"><img src="img/viber-icon.png" alt="рисунок Viber"></a>
+                <a href="https://web.telegram.org/k/" class="logo4"><img src="img/telegram-icon.png" alt="рисунок Telegram"></a>
+                <a href="https://discord.com/" class="logo5"><img src="img/discord-icon.png" alt="рисунок Discord"></a>
             </div>
             <div class="year">
                 <p class="year_text">Study_Helper - 2023</p>
             </div>
         </footer>
-    </wrapper>
+    </div>
 </body>
 </html>
