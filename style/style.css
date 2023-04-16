@@ -1,0 +1,105 @@
+*{margin: 0 auto; padding: 0; font-size: 20px; cursor: default;}
+body{background-color: whitesmoke;}
+.wrapper{width: 80%; background-color: white; position: relative;}
+a{text-decoration: none; color: black; cursor: pointer;}
+a:hover{color: white;}
+textarea{font-size: 20px;}
+img{width: 50px;}
+
+/* --- HEADER ---*/
+h1{font-size: 50px;}
+h2{font-size: 20px;}
+header > .title{border: 1px black solid; 
+    text-align: center;padding: 20px 0 20px 0;}
+
+ul.menu{width: 100%; margin: 10px 0 30px -20px;
+    display: flex; justify-content: space-between;}
+nav > ul > ol{padding: 5px 20px;
+    background-color: lightgreen; float: left; display: flex;
+    font-size: 20px; border: 1px black solid;}
+
+ol.sites > ul{display: none; padding-right: 10px;}
+ol.sites:hover > ul{background-color: lightgreen; 
+    display: flex; flex-direction: column;
+    position: absolute;font-size: 20px; margin: 35px 0 0 -75px;}
+ol.sites:hover > ul > ol{padding: 5px 10px 5px 30px; width: auto;
+    border: 1px black solid; display: flex;}
+
+/* --- CONTENT ---*/
+
+/*ABOUT_US*/
+.content_about{font-size: 20px; margin-left: 20px; position: relative;}
+.content_about > ol{padding-top: -50px;}
+.content_about > li{float: left;}
+.content_about > img{width:100px; display: block; padding-left: 20px;}
+
+/*DOC*/
+.content_doc{margin-left: 20px;}
+.content_doc > p{margin-top: 10px;}
+.content_doc > textarea{width: 50%; height: 150px;}
+.content_doc > .drag_drop{display: flex; background-color: blanchedalmond;
+    justify-content: space-around;}
+.content_doc > .summ{width: 20%; height: 100px; 
+    border: 1px black solid;}
+.content_doc > .presentation{width: 20%; height: 100px; 
+    border: 1px black solid;}
+
+/*TIMETABLE*/
+.timetable_week > p{float: left; margin-right: 11%;}
+.timetable_main{margin-left: 31%;}
+.timetable_number > p{float: left; margin: 20px 13% 0 0;}
+.vertical_line{margin-left: 10%;padding-right: 5px;
+    border-right: 1px solid black;}
+.content_timetable > h1{margin-bottom: 20px;}
+p.error{text-align: right; color: red;}
+p.complete{color: green; text-align: right;}
+.timetable_main > hr{margin-top: 80px;}
+.content_timetable > h3{text-align: right; margin: 10px 0;}
+.timetable_writing{position: absolute; top: 400px;width: 30%; font-size: 10px;}
+.timetable_writing > textarea{height: 300px; width: 100%;}
+
+/*SETTINGS*/
+
+/*SIGN_IN*/
+.wrapper-signin{width: 60%; margin-top: 100px; position: relative;
+    background-color: lightgreen; padding-left: 50px;
+    border-radius: 20px; border: 1px solid black;}
+.content_signin{width: 500px; height: 100px; margin-left: 20px;}
+.wrapper-signin > h1{margin-top: 10px;}
+p.wrong{color: red;}
+.wrapper_signin > h2{text-align: center; margin-top: 10px;}
+.wrapper_signin .content_signin > button{display: block; position: absolute;
+    padding: 5px 10px 5px 10px; border-radius: 10px;
+    background-color: blanchedalmond; margin-top: 10px;}
+/*.content_signon > button{padding: 5px 75px;}*/
+.wrapper_signin > input{width: 90%;margin-left: 5%; 
+    border-radius: 10px; padding: 5px 20px;}
+.wrapper_signin > p{margin: 10px 0 0 5%;}       
+
+/*INTO_TEXT*/
+
+
+
+/* --- FOOTER ---*/
+footer{background-color:rgb(63, 63, 63); 
+    color: white; text-align: center;}
+.call_me{display: flex; margin-bottom: 20px;}
+.telephone > a{color: white;}
+.contacts > a{display: block; border-radius: 50%;
+    background-color: white; border: 1px black solid;}
+.contacts > img{display: flex; flex-direction: row;}
+footer > .year{background-color: grey;}
+.year > p{text-align: center;}
+footer > a{color: white;}
+
+
+
+/*
+синий - rgb(0 123, 164) (0 106 130)
+коричневый - rgb(94 88 72)
+зеленый - rgb()
+серый - rgb(195 195 195)
+человеческий - rgb(130 122 76)
+оранджевый - rgb(171 89 16)
+розовый - rgb(134 79 85)
+*/
