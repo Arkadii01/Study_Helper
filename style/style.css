@@ -13,15 +13,15 @@ header > .title{border: 1px black solid;
     text-align: center;padding: 20px 0 20px 0;}
 
 ul.menu{width: 100%; margin: 10px 0 30px -20px;
-    display: flex; justify-content: space-between;}
+    display: flex; justify-content: space-between; flex-wrap: wrap;}
 nav > ul > ol{padding: 5px 20px;
     background-color: lightgreen; float: left; display: flex;
     font-size: 20px; border: 1px black solid;}
 
 ol.sites > ul{display: none; padding-right: 10px;}
-ol.sites:hover > ul{background-color: lightgreen; 
-    display: flex; flex-direction: column;
-    position: absolute;font-size: 20px; margin: 35px 0 0 -75px;}
+ol.sites:hover > ul{background-color: lightgreen; width: 50px;
+    display: flex; flex-direction: column; padding: 0;
+    position: absolute;font-size: 20px; margin: 35px 0 0 -20px;}
 ol.sites:hover > ul > ol{padding: 5px 10px 5px 30px; width: auto;
     border: 1px black solid; display: flex;}
 
@@ -52,13 +52,16 @@ ol.sites:hover > ul > ol{padding: 5px 10px 5px 30px; width: auto;
     border-right: 1px solid black;}
 .content_timetable > h1{margin-bottom: 20px;}
 p.error{text-align: right; color: red;}
-p.complete{color: green; text-align: right;}
+p.complete{color: green; text-align: right; margin: -50px 20px 0 0;}
 .timetable_main > hr{margin-top: 80px;}
 .content_timetable > h3{text-align: right; margin: 10px 0;}
 .timetable_writing{position: absolute; top: 400px;width: 30%; font-size: 10px;}
 .timetable_writing > textarea{height: 300px; width: 100%;}
 
 /*SETTINGS*/
+.content_settings{margin-left: 20px;}
+.content_settings > button{margin-bottom: 20px;}
+button.quit{background-color: crimson; color: whitesmoke;}
 
 /*SIGN_IN*/
 .wrapper-signin{width: 60%; margin-top: 100px; position: relative;
@@ -77,6 +80,21 @@ p.wrong{color: red;}
 .wrapper_signin > p{margin: 10px 0 0 5%;}       
 
 /*INTO_TEXT*/
+.content_text{margin-left: 20px; height: 750px; display: flex; color: #808080;}
+.text_image > button, 
+.text_audio > button{width: 400px; margin: 25px 0; padding: 10px 0;}
+.text_image > textarea, 
+.text_audio > textarea{width: 400px; height: 300px;}
+.image_area, .audio_area{width: 400px; height: 300px;
+    background-color: #e0ffcc; text-align: center;
+    border: 1px black solid;}
+.image_area > p, .audio_area > p{display: block; width: 50%;margin-top: 80px;}
+
+
+/*RECOM*/
+.content_recom{height: 350px;}
+.content_recom > center > button{padding: 5px 20px; margin: 30px 0 40px 0;}
+.content_recom > p{text-align: center;}
 
 
 
