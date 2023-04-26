@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" 
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" 
-            integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" 
-            crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
     <title>Study_Helper</title>
 </head>
 <body>
@@ -24,16 +21,16 @@
                         <a href='#' class="about_menu-text">О сайте</a>
                     </ol>
                     <ol class="doc">
-                        <a href='doc.html' class="doc_text">Работа с .doc</a>
+                        <a href="{{url_for('into_doc_showing')}}" class="doc_text">Работа с .doc</a>
                     </ol>
                     <ol class="transform">
-                        <a href='into_text.html' class="transform_text">Перевод в текст</a>
+                        <a href="{{url_for('into_text_showing')}}" class="transform_text">Перевод в текст</a>
                     </ol>
                     <ol class="timetable">
-                        <a href='timetable.html' class="timetable_text">Расписание</a>
+                        <a href="{{url_for('timetable_showing')}}" class="timetable_text">Расписание</a>
                     </ol>
-                    <ol>
-                        <a href="recom.html" class="recom_text">Советы</a>
+                    <ol class="recom">
+                        <a href="{{url_for('recom_showing')}}" class="recom_text">Советы</a>
                     </ol>
                     <ol class="sites">
                         <a href='#' class="sites_text">Сайты</a>
@@ -55,8 +52,8 @@
                             </ol>
                         </ul>
                     </ol>
-                    <ol class="settings">
-                        <a href='settings.html' class="settings_text">Настройки</a>
+                    <ol class='settings'>
+                        <a href="{{url_for('settings_showing')}}" class="settings_text">Настройки</a>
                     </ol>
                 </ul>
             </nav>
@@ -76,13 +73,58 @@
                 <ul>
                     <li>Работа с файлами - автоматическая запись текста
                         из сайтов в документы .docx и .pptx; 
-                        <img src="img/light/green/auto-icon.png" alt="автоматизация"></li>
+                        {% if color == "green" %}
+                            <img src="{{ url_for('static', filename='styles/img/light/green/auto-icon.png') }}" alt="автоматизация">
+                        {% elif color == "blue"%}
+                            <img src="{{ url_for('static', filename='styles/img/light/blue/auto-icon.png') }}" alt="автоматизация">
+                        {% elif color == "brown" %}
+                            <img src="{{ url_for('static', filename='styles/img/light/brown/auto-icon.png') }}" alt="автоматизация">
+                        {% elif color == "grey" %}
+                            <img src="{{ url_for('static', filename='styles/img/light/grey/auto-icon.png') }}" alt="автоматизация">
+                        {% elif color == "human" %}
+                            <img src="{{ url_for('static', filename='styles/img/light/human/auto-icon.png') }}" alt="автоматизация">
+                        {% elif color == "orange" %}
+                            <img src="{{ url_for('static', filename='styles/img/light/orange/auto-icon.png') }}" alt="автоматизация">
+                        {% elif color == "pink" %}
+                            <img src="{{ url_for('static', filename='styles/img/light/pink/auto-icon.png') }}" alt="автоматизация">
+                        {% endif%}
+                    </li>
                     <li>Советы и рекомендации - сборник полезных советов 
                         для улучшения жизни; 
-                        <img src="img/light/green/book-icon.png" alt="сборник советов"></li>
+                        {% if color == "green"%}
+                            <img src="{{ url_for('static', filename='styles/img/light/green/book-icon.png') }}" alt="сборник советов">
+                        {% elif color == "blue" %}
+                            <img src="{{ url_for('static', filename='styles/img/light/blue/book-icon.png') }}" alt="автоматизация">
+                        {% elif color == "brown" %}
+                            <img src="{{ url_for('static', filename='styles/img/light/brown/book-icon.png') }}" alt="автоматизация">
+                        {% elif color == "grey" %}
+                            <img src="{{ url_for('static', filename='styles/img/light/grey/book-icon.png') }}" alt="автоматизация">
+                        {% elif color == "human" %}
+                            <img src="{{ url_for('static', filename='styles/img/light/human/book-icon.png') }}" alt="автоматизация">
+                        {% elif color == "orange" %}
+                            <img src="{{ url_for('static', filename='styles/img/light/orange/book-icon.png') }}" alt="автоматизация">
+                        {% elif color == "pink" %}
+                            <img src="{{ url_for('static', filename='styles/img/light/pink/book-icon.png') }}" alt="автоматизация">
+                        {% endif%}
+                    </li>
                     <li>Инструменты планирования - календари и планировщики, 
                         помогающие организовать учебу; 
-                        <img src="img/light/green/timetable-icon.png" alt="календарь"></li>
+                        {% if color == "green"%}
+                            <img src="{{ url_for('static', filename='styles/img/light/green/timetable-icon.png') }}" alt="календарь">
+                        {% elif color == "blue" %}
+                            <img src="{{ url_for('static', filename='styles/img/light/blue/timetable-icon.png') }}" alt="автоматизация">
+                        {% elif color == "brown" %}
+                            <img src="{{ url_for('static', filename='styles/img/light/brown/timetable-icon.png') }}" alt="автоматизация">
+                        {% elif color == "grey" %}
+                            <img src="{{ url_for('static', filename='styles/img/light/grey/timetable-icon.png') }}" alt="автоматизация">
+                        {% elif color == "human" %}
+                            <img src="{{ url_for('static', filename='styles/img/light/human/timetable-icon.png') }}" alt="автоматизация">
+                        {% elif color == "orange" %}
+                            <img src="{{ url_for('static', filename='styles/img/light/orange/timetable-icon.png') }}" alt="автоматизация">
+                        {% elif color == "pink" %}
+                            <img src="{{ url_for('static', filename='styles/img/light/pink/timetable-icon.png') }}" alt="автоматизация">
+                        {% endif%}
+                    </li>
                     <li>и многое другое!</li>
                 </ul>
             </div>
@@ -96,15 +138,15 @@
                 <div class="contacts">
                     <p class="contacts_text">Контакты</p>
                     <a href="https://web.whatsapp.com/" class="logo1">
-                        <img src="img/light/green/whatsap-icon.png" alt="рисунок WhatsApp"></a>
+                        <img src="{{ url_for('static', filename='styles/img/light/green/whatsap-icon.png') }}" alt="рисунок WhatsApp"></a>
                     <a href="https://vk.com" class="logo2">
-                        <img src="img/light/green//vk-icon.png" alt="рисунок VK"></a>
+                        <img src="{{ url_for('static', filename='styles/img/light/green/vk-icon.png') }}" alt="рисунок VK"></a>
                     <a href="https://www.viber.com/" class="logo3">
-                        <img src="img/light/green/viber-icon.png" alt="рисунок Viber"></a>
+                        <img src="{{ url_for('static', filename='styles/img/light/green/viber-icon.png') }}" alt="рисунок Viber"></a>
                     <a href="https://web.telegram.org/k/" class="logo4">
-                        <img src="img/light/green/telegram-icon.png" alt="рисунок Telegram"></a>
+                        <img src="{{ url_for('static', filename='styles/img/light/green/telegram-icon.png') }}" alt="рисунок Telegram"></a>
                     <a href="https://discord.com/" class="logo5">
-                        <img src="img/light/green/discord-icon.png" alt="рисунок Discord"></a>
+                        <img src="{{ url_for('static', filename='styles/img/light/green/discord-icon.png') }}" alt="рисунок Discord"></a>
                 </div>
             </div>
             <div class="year">
