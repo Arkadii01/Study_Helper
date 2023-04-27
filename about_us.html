@@ -208,7 +208,7 @@
                             {% elif color == 'pink' %}
                                 <img src="{{ url_for('static', filename='styles/img/light/pink/whatsap-icon.png') }}" alt="рисунок WhatsApp">
                             {% endif %}
-                        {% else %}
+                        {% elif lighting == 'dark' %}
                             {% if color == 'green' %}
                                 <img src="{{ url_for('static', filename='styles/img/dark/green/whatsap-icon.png') }}" alt="рисунок WhatsApp">
                             {% elif color == 'blue' %}
