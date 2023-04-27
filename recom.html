@@ -60,10 +60,10 @@
         </header>
         <content>
             <div class="content_recom">
-                <form action="/recomendation", method="POST">
-                    <center><button name="index" value=True>Дай совет</button></center>
+                <form action="{{ url_for('recom')}}", method="GET">
+                    <center><button type='recom'>Дай совет</button></center>
+                    <p>{{ help }}</p>
                 </form>
-                <p>Здесь будет отображен совет ПОСЛЕ НАЖАТИЯ НА КНОПКУ. При повторном нажатии совет изменится</p>
             </div>
         </content>
         <footer>
