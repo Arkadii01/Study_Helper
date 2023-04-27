@@ -62,9 +62,111 @@
             <div class="content_timetable">
                 <h2>Расписание</h2>
                 <hr>
-                <button href="#" class="save"><img src="img/light/green/save-icon.png" alt="Иконка сохранения" class="timetable_save"></button>
-                <button href="#" class="right_side"><img src="img/light/green/left.png" alt="Стрелка налево" class="timetable_right"></button>
-                <button href="#" class="left_side"><img src="img/light/green/right.png" alt="Стрелка направо" class="timetable_left"></button>
+                <button href="#" class="save">
+                    {% if lighting == 'light' %}
+                        {% if color == 'green' %}
+                            <img src="{{url_for('static', filename='styles/img/light/green/save-icon.png')}}" alt="Иконка сохранения" class="timetable_save">
+                            {% elif color == 'blue' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/blue/save-icon.png') }}" alt="Иконка сохранения">
+                            {% elif color == 'brown' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/brown/save-icon.png') }}" alt="Иконка сохранения">
+                            {% elif color == 'grey' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/grey/save-icon.png') }}" alt="Иконка сохранения">
+                            {% elif color == 'human' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/human/save-icon.png') }}" alt="Иконка сохранения">
+                            {% elif color == 'orange' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/orange/save-icon.png') }}" alt="Иконка сохранения">
+                            {% elif color == 'pink' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/pink/save-icon.png') }}" alt="Иконка сохранения">
+                        {% endif %}
+                    {% elif lighting == 'dark' %}
+                        {% if color == 'green' %}
+                            <img src="{{url_for('static', filename='styles/img/dark/green/save-icon.png')}}" alt="Иконка сохранения" class="timetable_save">
+                            {% elif color == 'blue' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/blue/save-icon.png') }}" alt="Иконка сохранения">
+                            {% elif color == 'brown' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/brown/save-icon.png') }}" alt="Иконка сохранения">
+                            {% elif color == 'grey' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/grey/save-icon.png') }}" alt="Иконка сохранения">
+                            {% elif color == 'human' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/human/save-icon.png') }}" alt="Иконка сохранения">
+                            {% elif color == 'orange' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/orange/save-icon.png') }}" alt="Иконка сохранения">
+                            {% elif color == 'pink' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/pink/save-icon.png') }}" alt="Иконка сохранения">
+                        {% endif %}
+                    {% endif %}
+                </button>
+                <button href="#" class="right_side">
+                    {% if lighting == 'light' %}
+                        {% if color == 'green' %}
+                            <img src="{{url_for('static', filename='styles/img/light/green/left.png')}}" alt="Стрелка налево" class="timetable_right">
+                            {% elif color == 'blue' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/blue/left.png') }}" alt="Стрелка налево">
+                            {% elif color == 'brown' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/brown/left.png') }}" alt="Стрелка налево">
+                            {% elif color == 'grey' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/grey/left.png') }}" alt="Стрелка налево">
+                            {% elif color == 'human' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/human/left.png') }}" alt="Стрелка налево">
+                            {% elif color == 'orange' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/orange/left.png') }}" alt="Стрелка налево">
+                            {% elif color == 'pink' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/pink/left.png') }}" alt="Стрелка налево">
+                        {% endif %}
+                    {% elif lighting == 'dark' %}
+                        {% if color == 'green' %}
+                            <img src="{{url_for('static', filename='styles/img/dark/green/left.png')}}" alt="Стрелка налево" class="timetable_right">
+                            {% elif color == 'blue' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/blue/left.png') }}" alt="Стрелка налево">
+                            {% elif color == 'brown' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/brown/left.png') }}" alt="Стрелка налево">
+                            {% elif color == 'grey' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/grey/left.png') }}" alt="Стрелка налево">
+                            {% elif color == 'human' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/human/left.png') }}" alt="Стрелка налево">
+                            {% elif color == 'orange' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/orange/left.png') }}" alt="Стрелка налево">
+                            {% elif color == 'pink' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/pink/left.png') }}" alt="Стрелка налево">
+                        {% endif %}
+                    {% endif %}
+                </button>
+                <button href="#" class="left_side">
+                    {% if lighting == 'light' %}
+                        {% if color == 'green' %}
+                            <img src="{{url_for('static', filename='styles/img/light/green/right.png')}}" alt="Стрелка направо" class="timetable_left">
+                            {% elif color == 'blue' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/blue/right.png') }}" alt="Стрелка направо">
+                            {% elif color == 'brown' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/brown/right.png') }}" alt="Стрелка направо">
+                            {% elif color == 'grey' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/grey/right.png') }}" alt="Стрелка направо">
+                            {% elif color == 'human' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/human/right.png') }}" alt="Стрелка направо">
+                            {% elif color == 'orange' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/orange/right.png') }}" alt="Стрелка направо">
+                            {% elif color == 'pink' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/pink/right.png') }}" alt="Стрелка направо">
+                        {% endif %}
+                    {% elif lighting == 'dark' %}
+                        {% if color == 'green' %}
+                            <img src="{{url_for('static', filename='styles/img/dark/green/right.png')}}" alt="Стрелка направо" class="timetable_left">
+                            {% elif color == 'blue' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/blue/right.png') }}" alt="Стрелка направо">
+                            {% elif color == 'brown' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/brown/right.png') }}" alt="Стрелка направо">
+                            {% elif color == 'grey' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/grey/right.png') }}" alt="Стрелка направо">
+                            {% elif color == 'human' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/human/right.png') }}" alt="Стрелка направо">
+                            {% elif color == 'orange' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/orange/right.png') }}" alt="Стрелка направо">
+                            {% elif color == 'pink' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/pink/right.png') }}" alt="Стрелка направо">
+                        {% endif %}
+                    {% endif %}
+                </button>
                 <hr>
                 <h3>Месяц Число</h3>
                 <p class="error">Неверно записаны данные. Внимательно прочитайте инструкцию.</p>
