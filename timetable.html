@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+    <title>Study_Helper</title>
+</head>
+<body>
+    <div class='wrapper'>
+        <header>
+            <div class="title">
+                <h1>Study_Helper</h1>
+                <h2>Делу время, потехе час.</h2>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <ol class="about">
+                        <a href="{{url_for('about_us_showing')}}" class="about_menu-text">О сайте</a>
+                    </ol>
+                    <ol class="doc">
+                        <a href="{{url_for('into_doc_showing')}}" class="doc_text">Работа с .doc</a>
+                    </ol>
+                    <ol class="transform">
+                        <a href="{{url_for('into_text_showing')}}" class="transform_text">Перевод в текст</a>
+                    </ol>
+                    <ol class="timetable">
+                        <a href='#' class="timetable_text">Расписание</a>
+                    </ol>
+                    <ol class="recom">
+                        <a href="{{url_for('recom_showing')}}" class="recom_text">Советы</a>
+                    </ol>
+                    <ol class="sites">
+                        <a href='#' class="sites_text">Сайты</a>
+                        <ul>
+                            <ol>
+                                <a href="https://vpr.sdamgia.ru/">Решу ВПР</a>
+                            </ol>
+                            <ol>
+                                <a href="https://oge.sdamgia.ru/">Решу ОГЭ</a>
+                            </ol>
+                            <ol>
+                                <a href="https://ege.sdamgia.ru/">Решу ЕГЭ</a>
+                            </ol>
+                            <ol>
+                                <a href="https://obrazovaka.ru/books">Кратк. сод.</a>
+                            </ol>
+                            <ol>
+                                <a href="https://biouroki.ru/workshop/crossgen.html">Кроcсвор</a>
+                            </ol>
+                        </ul>
+                    </ol>
+                    <ol class="settings">
+                        <a href="{{url_for('settings_showing')}}" class="settings_text">Настройки</a>
+                    </ol>
+                </ul>
+            </nav>
+        </header>
+        <content>
+            <div class="content_timetable">
+                <h2>Расписание</h2>
+                <hr>
+                <button href="#" class="save">
+                    {% if lighting == 'light' %}
+                        {% if color == 'green' %}
+                            <img src="{{url_for('static', filename='styles/img/light/green/save-icon.png')}}" alt="Иконка сохранения" class="timetable_save">
+                            {% elif color == 'blue' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/blue/save-icon.png') }}" alt="Иконка сохранения">
+                            {% elif color == 'brown' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/brown/save-icon.png') }}" alt="Иконка сохранения">
+                            {% elif color == 'grey' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/grey/save-icon.png') }}" alt="Иконка сохранения">
+                            {% elif color == 'human' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/human/save-icon.png') }}" alt="Иконка сохранения">
+                            {% elif color == 'orange' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/orange/save-icon.png') }}" alt="Иконка сохранения">
+                            {% elif color == 'pink' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/pink/save-icon.png') }}" alt="Иконка сохранения">
+                        {% endif %}
+                    {% elif lighting == 'dark' %}
+                        {% if color == 'green' %}
+                            <img src="{{url_for('static', filename='styles/img/dark/green/save-icon.png')}}" alt="Иконка сохранения" class="timetable_save">
+                            {% elif color == 'blue' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/blue/save-icon.png') }}" alt="Иконка сохранения">
+                            {% elif color == 'brown' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/brown/save-icon.png') }}" alt="Иконка сохранения">
+                            {% elif color == 'grey' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/grey/save-icon.png') }}" alt="Иконка сохранения">
+                            {% elif color == 'human' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/human/save-icon.png') }}" alt="Иконка сохранения">
+                            {% elif color == 'orange' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/orange/save-icon.png') }}" alt="Иконка сохранения">
+                            {% elif color == 'pink' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/pink/save-icon.png') }}" alt="Иконка сохранения">
+                        {% endif %}
+                    {% endif %}
+                </button>
+                <button href="#" class="right_side">
+                    {% if lighting == 'light' %}
+                        {% if color == 'green' %}
+                            <img src="{{url_for('static', filename='styles/img/light/green/left.png')}}" alt="Стрелка налево" class="timetable_right">
+                            {% elif color == 'blue' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/blue/left.png') }}" alt="Стрелка налево">
+                            {% elif color == 'brown' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/brown/left.png') }}" alt="Стрелка налево">
+                            {% elif color == 'grey' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/grey/left.png') }}" alt="Стрелка налево">
+                            {% elif color == 'human' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/human/left.png') }}" alt="Стрелка налево">
+                            {% elif color == 'orange' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/orange/left.png') }}" alt="Стрелка налево">
+                            {% elif color == 'pink' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/pink/left.png') }}" alt="Стрелка налево">
+                        {% endif %}
+                    {% elif lighting == 'dark' %}
+                        {% if color == 'green' %}
+                            <img src="{{url_for('static', filename='styles/img/dark/green/left.png')}}" alt="Стрелка налево" class="timetable_right">
+                            {% elif color == 'blue' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/blue/left.png') }}" alt="Стрелка налево">
+                            {% elif color == 'brown' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/brown/left.png') }}" alt="Стрелка налево">
+                            {% elif color == 'grey' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/grey/left.png') }}" alt="Стрелка налево">
+                            {% elif color == 'human' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/human/left.png') }}" alt="Стрелка налево">
+                            {% elif color == 'orange' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/orange/left.png') }}" alt="Стрелка налево">
+                            {% elif color == 'pink' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/pink/left.png') }}" alt="Стрелка налево">
+                        {% endif %}
+                    {% endif %}
+                </button>
+                <button href="#" class="left_side">
+                    {% if lighting == 'light' %}
+                        {% if color == 'green' %}
+                            <img src="{{url_for('static', filename='styles/img/light/green/right.png')}}" alt="Стрелка направо" class="timetable_left">
+                            {% elif color == 'blue' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/blue/right.png') }}" alt="Стрелка направо">
+                            {% elif color == 'brown' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/brown/right.png') }}" alt="Стрелка направо">
+                            {% elif color == 'grey' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/grey/right.png') }}" alt="Стрелка направо">
+                            {% elif color == 'human' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/human/right.png') }}" alt="Стрелка направо">
+                            {% elif color == 'orange' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/orange/right.png') }}" alt="Стрелка направо">
+                            {% elif color == 'pink' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/pink/right.png') }}" alt="Стрелка направо">
+                        {% endif %}
+                    {% elif lighting == 'dark' %}
+                        {% if color == 'green' %}
+                            <img src="{{url_for('static', filename='styles/img/dark/green/right.png')}}" alt="Стрелка направо" class="timetable_left">
+                            {% elif color == 'blue' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/blue/right.png') }}" alt="Стрелка направо">
+                            {% elif color == 'brown' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/brown/right.png') }}" alt="Стрелка направо">
+                            {% elif color == 'grey' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/grey/right.png') }}" alt="Стрелка направо">
+                            {% elif color == 'human' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/human/right.png') }}" alt="Стрелка направо">
+                            {% elif color == 'orange' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/orange/right.png') }}" alt="Стрелка направо">
+                            {% elif color == 'pink' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/pink/right.png') }}" alt="Стрелка направо">
+                        {% endif %}
+                    {% endif %}
+                </button>
+                <hr>
+                <h3>Месяц Число</h3>
+                <p class="error"><!--Неверно записаны данные. Внимательно прочитайте инструкцию.--></p>
+                <p class="complete"><!--Данные успешно сохранены--></p>
+                <div class="timetable_main">
+                    <div class="timetable_week">
+                        <p>ПН</p><p>ВТ</p><p>СР</p><p>ЧТ</p>
+                        <p>ПТ</p><p>СБ</p><p>ВС</p>
+                        <p>1</p><p>2</p><p>3</p><p>4</p>
+                        <p>5</p><p>6</p><p>7</p>
+                   </div>
+                   <div class="hours">
+                    <p>00</p><hr><p>01</p><hr><p>02</p><hr><p>03</p><hr><p>04</p><hr><p>05</p><hr>
+                    <p>06</p><hr><p>07</p><hr><p>08</p><hr><p>09</p><hr><p>10</p><hr><p>11</p><hr>
+                    <p>12</p><hr><p>13</p><hr><p>14</p><hr><p>15</p><hr><p>16</p><hr><p>17</p><hr>
+                    <p>18</p><hr><p>19</p><hr><p>20</p><hr><p>21</p><hr><p>22</p><hr><p>23</p><hr>
+                   </div>
+                   <div class="vertical_line"></div>
+                   <div class="vertical_line"></div>
+                   <div class="vertical_line"></div>
+                   <div class="vertical_line"></div>
+                   <div class="vertical_line"></div>
+                   <div class="vertical_line"></div>
+                   <div class="vertical_line"></div>
+                   <div class="vertical_line"></div>
+                </div>
+                <div class="timetable_writing">
+                    <textarea name="" id=""></textarea>
+                    <p><b>Инструкция</b></p><br>
+                    <p>Указанные ниже команды необходимо разделять пробелом, 
+                        писать их можно в любом порядке.</p><br>
+                    <p>ПН - На понедельник</p>
+                    <p>ВТ - На вторник</p>
+                    <p>СР - На среду</p>
+                    <p>ЧТ - На четверг</p>
+                    <p>ПТ - На пятницу</p>
+                    <p>СБ - На субботу</p>
+                    <p>ВС - На воскресенье</p><br>
+                    <p>повтор - повторять каждую неделю</p>
+                    <p>[] - здесь будет отображена ваша задача</p>
+                    <p>; - конец задачи</p>
+                    <p>цвет:синий - блок задачи будет синего цвета</p>
+                    <p>12.01 - число.месяц</p>
+                    <p>01:20 - час:минута (необходимо, чтобы минуты оканчивались либо на 0, либо на 5)</p>
+                </div>
+            </div>
+        </content>
+        <footer>
+            <div class="call_me">
+                <div class="telephone">
+                    <p>Телефон</p>
+                    <a href="tel:">+7-923-666-23-45</a>
+                </div>
+                <div class="contacts">
+                    <p class="contacts_text">Контакты</p>
+                    <a href="https://web.whatsapp.com/" class="logo1">
+                        {% if lighting == 'light' %}
+                            {% if color == 'green' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/green/whatsap-icon.png') }}" alt="рисунок WhatsApp">
+                            {% elif color == 'blue' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/blue/whatsap-icon.png') }}" alt="рисунок WhatsApp">
+                            {% elif color == 'brown' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/brown/whatsap-icon.png') }}" alt="рисунок WhatsApp">
+                            {% elif color == 'grey' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/grey/whatsap-icon.png') }}" alt="рисунок WhatsApp">
+                            {% elif color == 'human' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/human/whatsap-icon.png') }}" alt="рисунок WhatsApp">
+                            {% elif color == 'orange' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/orange/whatsap-icon.png') }}" alt="рисунок WhatsApp">
+                            {% elif color == 'pink' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/pink/whatsap-icon.png') }}" alt="рисунок WhatsApp">
+                            {% endif %}
+                        {% else %}
+                            {% if color == 'green' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/green/whatsap-icon.png') }}" alt="рисунок WhatsApp">
+                            {% elif color == 'blue' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/blue/whatsap-icon.png') }}" alt="рисунок WhatsApp">
+                            {% elif color == 'brown' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/brown/whatsap-icon.png') }}" alt="рисунок WhatsApp">
+                            {% elif color == 'grey' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/grey/whatsap-icon.png') }}" alt="рисунок WhatsApp">
+                            {% elif color == 'human' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/human/whatsap-icon.png') }}" alt="рисунок WhatsApp">
+                            {% elif color == 'orange' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/orange/whatsap-icon.png') }}" alt="рисунок WhatsApp">
+                            {% elif color == 'pink' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/pink/whatsap-icon.png') }}" alt="рисунок WhatsApp">
+                            {% endif %}
+                        {% endif %}
+                    </a>
+                    <a href="https://vk.com" class="logo2">
+                        {% if lighting == 'light' %}
+                            {% if color == 'green' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/green/vk-icon.png') }}" alt="рисунок VK">
+                            {% elif color == 'blue' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/blue/vk-icon.png') }}" alt="рисунок VK">
+                            {% elif color == 'brown' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/brown/vk-icon.png') }}" alt="рисунок VK">
+                            {% elif color == 'grey' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/grey/vk-icon.png') }}" alt="рисунок VK">
+                            {% elif color == 'human' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/human/vk-icon.png') }}" alt="рисунок VK">
+                            {% elif color == 'orange' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/orange/vk-icon.png') }}" alt="рисунок VK">
+                            {% elif color == 'pink' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/pink/vk-icon.png') }}" alt="рисунок VK">
+                            {% endif %}
+                        {% else %}
+                            {% if color == 'green' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/green/vk-icon.png') }}" alt="рисунок VK">
+                            {% elif color == 'blue' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/blue/vk-icon.png') }}" alt="рисунок VK">
+                            {% elif color == 'brown' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/brown/vk-icon.png') }}" alt="рисунок VK">
+                            {% elif color == 'grey' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/grey/vk-icon.png') }}" alt="рисунок VK">
+                            {% elif color == 'human' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/human/vk-icon.png') }}" alt="рисунок VK">
+                            {% elif color == 'orange' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/orange/vk-icon.png') }}" alt="рисунок VK">
+                            {% elif color == 'pink' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/pink/vk-icon.png') }}" alt="рисунок VK">
+                            {% endif %}
+                        {% endif %}
+                    </a>
+                    <a href="https://www.viber.com/" class="logo3">
+                        {% if lighting == 'light' %}
+                            {% if color == 'green' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/green/viber-icon.png') }}" alt="рисунок viber">
+                            {% elif color == 'blue' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/blue/viber-icon.png') }}" alt="рисунок viber">
+                            {% elif color == 'brown' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/brown/viber-icon.png') }}" alt="рисунок viber">
+                            {% elif color == 'grey' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/grey/viber-icon.png') }}" alt="рисунок viber">
+                            {% elif color == 'human' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/human/viber-icon.png') }}" alt="рисунок viber">
+                            {% elif color == 'orange' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/orange/viber-icon.png') }}" alt="рисунок viber">
+                            {% elif color == 'pink' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/pink/viber-icon.png') }}" alt="рисунок viber">
+                            {% endif %}
+                        {% else %}
+                            {% if color == 'green' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/green/viber-icon.png') }}" alt="рисунок viber">
+                            {% elif color == 'blue' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/blue/viber-icon.png') }}" alt="рисунок viber">
+                            {% elif color == 'brown' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/brown/viber-icon.png') }}" alt="рисунок viber">
+                            {% elif color == 'grey' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/grey/viber-icon.png') }}" alt="рисунок viber">
+                            {% elif color == 'human' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/human/viber-icon.png') }}" alt="рисунок viber">
+                            {% elif color == 'orange' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/orange/viber-icon.png') }}" alt="рисунок viber">
+                            {% elif color == 'pink' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/pink/viber-icon.png') }}" alt="рисунок viber">
+                            {% endif %}
+                        {% endif %}
+                    </a>
+                    <a href="https://web.telegram.org/k/" class="logo4">
+                        {% if lighting == 'light' %}
+                            {% if color == 'green' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/green/telegram-icon.png') }}" alt="рисунок telegram">
+                            {% elif color == 'blue' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/blue/telegram-icon.png') }}" alt="рисунок telegram">
+                            {% elif color == 'brown' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/brown/telegram-icon.png') }}" alt="рисунок telegram">
+                            {% elif color == 'grey' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/grey/telegram-icon.png') }}" alt="рисунок telegram">
+                            {% elif color == 'human' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/human/telegram-icon.png') }}" alt="рисунок telegram">
+                            {% elif color == 'orange' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/orange/telegram-icon.png') }}" alt="рисунок telegram">
+                            {% elif color == 'pink' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/pink/telegram-icon.png') }}" alt="рисунок telegram">
+                            {% endif %}
+                        {% else %}
+                            {% if color == 'green' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/green/telegram-icon.png') }}" alt="рисунок telegram">
+                            {% elif color == 'blue' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/blue/telegram-icon.png') }}" alt="рисунок telegram">
+                            {% elif color == 'brown' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/brown/telegram-icon.png') }}" alt="рисунок telegram">
+                            {% elif color == 'grey' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/grey/telegram-icon.png') }}" alt="рисунок telegram">
+                            {% elif color == 'human' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/human/telegram-icon.png') }}" alt="рисунок telegram">
+                            {% elif color == 'orange' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/orange/telegram-icon.png') }}" alt="рисунок telegram">
+                            {% elif color == 'pink' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/pink/telegram-icon.png') }}" alt="рисунок telegram">
+                            {% endif %}
+                        {% endif %}
+                    </a>
+                    <a href="https://discord.com/" class="logo5">
+                        {% if lighting == 'light' %}
+                            {% if color == 'green' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/green/discord-icon.png') }}" alt="рисунок discord">
+                            {% elif color == 'blue' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/blue/discord-icon.png') }}" alt="рисунок discord">
+                            {% elif color == 'brown' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/brown/discord-icon.png') }}" alt="рисунок discord">
+                            {% elif color == 'grey' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/grey/discord-icon.png') }}" alt="рисунок discord">
+                            {% elif color == 'human' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/human/discord-icon.png') }}" alt="рисунок discord">
+                            {% elif color == 'orange' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/orange/discord-icon.png') }}" alt="рисунок discord">
+                            {% elif color == 'pink' %}
+                                <img src="{{ url_for('static', filename='styles/img/light/pink/discord-icon.png') }}" alt="рисунок discord">
+                            {% endif %}
+                        {% else %}
+                            {% if color == 'green' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/green/discord-icon.png') }}" alt="рисунок discord">
+                            {% elif color == 'blue' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/blue/discord-icon.png') }}" alt="рисунок discord">
+                            {% elif color == 'brown' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/brown/discord-icon.png') }}" alt="рисунок discord">
+                            {% elif color == 'grey' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/grey/discord-icon.png') }}" alt="рисунок discord">
+                            {% elif color == 'human' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/human/discord-icon.png') }}" alt="рисунок discord">
+                            {% elif color == 'orange' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/orange/discord-icon.png') }}" alt="рисунок discord">
+                            {% elif color == 'pink' %}
+                                <img src="{{ url_for('static', filename='styles/img/dark/pink/discord-icon.png') }}" alt="рисунок discord">
+                            {% endif %}
+                        {% endif %}
+                    </a>
+                </div>
+            </div>
+            <div class="year">
+                <p class="year_text">Study_Helper - 2023</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

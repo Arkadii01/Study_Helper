@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+    <title>Study_Helper</title>
+</head>
+<body>
+    <div class="wrapper-signin">
+        <div class="conent_signin">
+            <form action="{{ url_for('sign_in_doing')}}" method="POST">
+                <center><h1>Регистрация</h1></center>
+                <p>Введите эл. почту:</p>
+                <input type="text" name="email">
+                <p>Введите пароль:</p>
+                <input type="password" name="password">
+                <p>Введите пароль ещё раз:</p>
+                <input type="password" name="need_password"><br>
+                {% if passwordin != need_passwordin %}
+                    <p class="wrong">Пароль не совпадает с предыдущим или неверная эл.почта.</p>
+                {% endif %}
+                <button type="sign_in_doing">Зарегистрироваться</button>
+            </form>
+        </div>
+        <div class="content_signon">
+            <form action="{{ url_for('sign_in_doing')}}" method="POST"></form>
+                <center><h1>Вход</h1></center>
+                <p>Введите эл. почту:</p>
+                <input type="text" name="email">
+                <p>Введите пароль:</p>
+                <input type="password" name="password"><br>
+                {% if passwordon != need_passwordon %}
+                    <p class="wrong">Неверный пароль или неверная эл.почта</p>
+                {% endif %}
+                <button type="sign_in_doing">Войти</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
