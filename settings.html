@@ -45,10 +45,10 @@
                                 <a href="https://ege.sdamgia.ru/">Решу ЕГЭ</a>
                             </ol>
                             <ol>
-                                <a href="https://obrazovaka.ru/books">Краткое содержание</a>
+                                <a href="https://obrazovaka.ru/books">Кратк. сод.</a>
                             </ol>
                             <ol>
-                                <a href="https://biouroki.ru/workshop/crossgen.html">Кроссворд</a>
+                                <a href="https://biouroki.ru/workshop/crossgen.html">Кроcсвор</a>
                             </ol>
                         </ul>
                     </ol>
@@ -63,30 +63,34 @@
                 <h2>Настройки</h2>
                     <p class="theme_title">Тема: </p>
                     <div class="theme">
-                        <button class="dark"><div></div></button>
-                        <button class="light"><div></div></button>
+                        <form action="{{url_for('settings_doing')}}" method="POST">
+                            <button class="dark" name='lighting' value="dark"><div></div></button>
+                            <button class="light" name='lighting' value="light"><div></div></button>
+                        </form>
                     </div><br>
 
                     <p class="colors_title">Цвет: </p>
                     <div class="colors">
-                        <button class="green">
-                            <div class="green_color"></div></button>
-                        <button class="blue">
-                            <div class="blue_color"></div></button>
-                        <button class="brown">
-                            <div class="brown_color"></div></button>
-                        <button class="grey">
-                            <div class="grey_color"></div></button>
-                        <button class="human">
-                            <div class="human_color"></div></button>
-                        <button class="pink">
-                            <div class="pink_color"></div></button>
-                        <button class="orange">
-                            <div class="orange_color"></div></button>
+                        <form action="{{url_for('settings_doing')}}" method="POST">
+                            <button class="green" name='color' value="green">
+                                <div class="green_color"></div></button>
+                            <button class="blue" name='color' value="blue">
+                                <div class="blue_color"></div></button>
+                            <button class="brown" name='color' value="brown">
+                                <div class="brown_color"></div></button>
+                            <button class="grey" name='color' value="grey">
+                                <div class="grey_color"></div></button>
+                            <button class="human" name='color' value="human">
+                                <div class="human_color"></div></button>
+                            <button class="pink" name='color' value="pink">
+                                <div class="pink_color"></div></button>
+                            <button class="orange" name='color' value="orange">
+                                <div class="orange_color"></div></button>
+                        </form>
                     </div>
 
                     <p>Оставить отзыв</p>
-                    <textarea name="" id=""></textarea><br>
+                    <textarea name="answer"></textarea><br>
                     <button>Отправить</button>
                     <p class="right">Ваш отзыв успешно отправлен</p>
 
