@@ -29,16 +29,14 @@ def text_for_slides(docx_file):
         total_text.append(slide_text)
     return total_text, links_text
 
-docx_file = f'{input("Введите docx файл без .docx")}.docx'
-total_text, links = text_for_slides(docx_file)
-
+# docx_file = f'{input("Введите docx файл без .docx")}.docx'
+# total_text, links = text_for_slides(docx_file)
 prs = Presentation()
-need = input()
 
 slide = prs.slides.add_slide(prs.slide_layouts[0])   # slide
 title = slide.shapes.title
 subtitle = slide.placeholders[1]
-title.text = need
+title.text = 'Название'
 subtitle.text = 'Работу выполнил:\n'
 
 slide = prs.slides.add_slide(prs.slide_layouts[1]) # slide
