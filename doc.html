@@ -45,10 +45,10 @@
                                 <a href="https://ege.sdamgia.ru/">Решу ЕГЭ</a>
                             </ol>
                             <ol>
-                                <a href="https://obrazovaka.ru/books">Краткое содержание</a>
+                                <a href="https://obrazovaka.ru/books">Кратк. сод.</a>
                             </ol>
                             <ol>
-                                <a href="https://biouroki.ru/workshop/crossgen.html">Кроссворд</a>
+                                <a href="https://biouroki.ru/workshop/crossgen.html">Кроcсвор</a>
                             </ol>
                         </ul>
                     </ol>
@@ -62,13 +62,15 @@
             <div class="content_doc">
                 <h2>Работа с документами</h2>
                 <p>Введите запрос</p>
-                <input type="text">
-                <button>Поиск</button>
-                <p>Введите название Word документа без .docx</p>
-                <input type="text">
-                <p>Введите ссылки на необходимый сайт через Enter</p>
-                <textarea></textarea><br>
-                <button>Начать</button>
+                <form action="{{url_for('into_doc_doing')}}" method="POST">
+                    <input type="text" name="search" placeholder="{{ search }}">
+                    <button type="into_doc_doing">Поиск</button>
+                    <p>Введите название Word документа без .docx</p>
+                    <input type="text" name="doc_name" placeholder="{{ doc_name }}">
+                    <p>Введите ссылки на необходимый сайт через Enter</p>
+                    <textarea name="links"></textarea><br>
+                    <button type="into_doc_doing">Начать</button>
+                </form>
                 <p>Скаченные файлы вы можете либо соединить вместе, либо переместить весь текст в презентацию</p>
                 <div class="drag_drop-word">
                     <div class="summ">
